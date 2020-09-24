@@ -8,7 +8,7 @@ from googletrans import Translator
 
 parser = argparse.ArgumentParser(description="Translates a piece of text in the worst way possible.", epilog="This program has the WTFPL license. DO WHAT THE F*CK YOU WANT TO.")
 parser.add_argument('--phrase', '-p', type=str,  help="The phrase you want to translate. Make sure it's spelt correctly!", default="The quick brown fox jumps over the lazy dog.")
-parser.add_argument('--source_language', '-s', type=str,  help="The source text language. Use two letter codes or else it won't work.", default="en")
+parser.add_argument('--source_language', '-s', type=str,  help="The source text language. Use two letter codes or else it won't work. If you don't know what the language is, you can type 'detect'.", default="en")
 parser.add_argument('--destination_language', '-d', type=str,  help="The source text language. Same as source language; use two letter codes!", default="es")
 parser.add_argument('--check_languages', help="Checks for languages possible on googletrans.", action='store_true')
 parser.add_argument('--version', action='version', version='%(prog)s 0.1')
