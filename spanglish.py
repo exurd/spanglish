@@ -12,6 +12,7 @@ parser.add_argument('--source_language', '-s', type=str,  help="The source text 
 parser.add_argument('--destination_language', '-d', type=str,  help="The source text language. Same as source language; use two letter codes!", default="es")
 parser.add_argument('--check_languages', help="Checks for languages possible on googletrans.", action='store_true')
 parser.add_argument('--clean', help="Makes the translation output the only thing to appear.", action='store_true')
+parser.add_argument('--boomerang', '-b', help="Translates it back to source language after translation. If --clean is on it will only display the boomeranged translation.", action='store_true')
 parser.add_argument('--version', action='version', version='%(prog)s 0.1.0')
 args, unknown = parser.parse_known_args()
 
@@ -29,7 +30,9 @@ detection = "detection" # so the program won't error out when checking for a log
 if args.source_language == "detect":
     detection = translator.detect(args.phrase).lang
     if args.clean == False:
+        print("\n")
         print("Phrase was detected as", detection + ".")
+        print("\n")
 
 # Checks if the detection it's a logographic language and splits the phrase into parts if so
 if detection == "ar" or args.source_language == "ar":
@@ -55,6 +58,49 @@ else:
 # Prints out the result
 if args.clean == False: # If false it will display the original and the arrows
     print(args.phrase)
+    print("\n")
     print("↓↓↓↓↓ (" + args.destination_language + ")")
-for translation in translations:
-    print(translation.text, end=" ")
+    print("\n")
+if args.clean == False:
+    for translation in translations:
+        print(translation.text, end=" ")
+    print("\n")
+elif args.boomerang == False:
+    for translation in translations:
+        print(translation.text, end=" ")
+    print("\n")
+
+# Next part is for the boomerang argument
+if args.boomerang == True:
+    # Checks if the detection it's a logographic language and splits the phrase into parts if so
+    if args.destination_language == "ar":
+        boomerwords = [i for i in args.phrase]
+    elif args.destination_language == "zh-TW":
+        boomerwords = [i for i in args.phrase]
+    elif args.destination_language == "zh-CN":
+        boomerwords = [i for i in args.phrase]
+    elif args.destination_language == "jw":
+        boomerwords = [i for i in args.phrase]
+    elif args.destination_language == "ja":
+        boomerwords = [i for i in args.phrase]
+    elif args.destination_language == "ko":
+        boomerwords = [i for i in args.phrase]
+    else:
+        boomerwords = args.phrase.split(" ") # For other languages it just splits the phrase into words
+    
+    if args.source_language == "detect":
+        boomertranslations = translator.translate(boomerwords, src=args.destination_language, dest=detection) # If the argument source_language uses detect it will use this
+    else:
+        boomertranslations = translator.translate(boomerwords, src=args.destination_language, dest=args.source_language)
+        
+    if args.clean == False: # If false it will display the original and the arrows
+        print("\n")
+        if args.source_language == "detect":
+            print("↓↓↓↓↓ (" + detection + ")")
+        else:
+            print("↓↓↓↓↓ (" + args.source_language + ")")
+        print("\n")
+    for translation in boomertranslations:
+        print(translation.text, end=" ")
+        
+    print("\n")
