@@ -11,6 +11,7 @@ parser.add_argument('--phrase', '-p', type=str,  help="The phrase you want to tr
 parser.add_argument('--source_language', '-s', type=str,  help="The source text language. Use two letter codes or else it won't work. If you don't know what the language is, you can type 'detect'.", default="en")
 parser.add_argument('--destination_language', '-d', type=str,  help="The source text language. Same as source language; use two letter codes!", default="es")
 parser.add_argument('--check_languages', help="Checks for languages possible on googletrans.", action='store_true')
+parser.add_argument('--clean', help="Makes the translation the only thing to appear", action='store_true')
 parser.add_argument('--version', action='version', version='%(prog)s 0.1.0')
 args, unknown = parser.parse_known_args()
 
@@ -27,7 +28,8 @@ detection = "detection" # so the program won't error out when checking for a log
 
 if args.source_language == "detect":
     detection = translator.detect(args.phrase).lang
-    print("Phrase was detected as", detection + ".")
+    if args.clean == False:
+        print("Phrase was detected as", detection + ".")
 
 # Checks if the detection it's a logographic language and splits the phrase into parts if so
 if detection == "ar" or args.source_language == "ar":
@@ -52,7 +54,8 @@ else:
     translations = translator.translate(words, src=args.source_language, dest=args.destination_language)
 
 # Prints out the result
-print(args.phrase)
-print("↓↓↓↓↓ (" + args.destination_language + ")")
+if args.clean == False:
+    print(args.phrase)
+    print("↓↓↓↓↓ (" + args.destination_language + ")")
 for translation in translations:
     print(translation.text, end=" ")
