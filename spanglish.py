@@ -21,17 +21,22 @@ if args.check_languages == True:
     print("The program will now close.")
     sys.exit()
 
-translator = Translator()
-
 # Splits the phrase into words
 words = args.phrase.split(" ")
 
 # Puts it through the translator
-translations = translator.translate(words, src=args.source_language, dest=args.destination_language)
+translator = Translator()
 
+# Uses this code if the argument source_language uses detect
+if args.source_language == "detect":
+    detection = translator.detect(args.phrase).lang
+    print("Phrase was detected as", detection + ".")
+    translations = translator.translate(words, src=detection, dest=args.destination_language)
+else:
+    translations = translator.translate(words, src=args.source_language, dest=args.destination_language)
+
+# Prints out the result
 print(args.phrase)
-
 print("↓↓↓↓↓")
-
 for translation in translations:
     print(translation.text, end=" ")
