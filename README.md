@@ -7,7 +7,9 @@ Have you ever seen a translation so bad it's good? spanglish tries to replicate 
 
 ## Usage
 
-spanglish requires the packages 'googletrans' and 'hyper' You can install the packages via 'pip install -r requirements.txt'.
+spanglish requires the packages 'googletrans' and 'hyper'.
+
+You can install the packages via 'pip install -r requirements.txt'.
 
 To get help you can use the -h parameter:
 
