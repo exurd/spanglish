@@ -8,20 +8,34 @@ Have you ever seen a translation so bad it's good? spanglish tries to replicate 
 ### Examples:
 
 ```
-我在浪费时间。
+No solo me gusta la trama de esta película, sino que también me encanta la banda sonora y el elenco es muy talentoso.
+
 ↓↓↓↓↓ (en)
-I in wave fee Time between .
+
+Not alone I like the plot of is movie, if not than too I love it the band sonorous and he cast it is very talented.
+```
+
+```
+我在浪费时间。
+
+↓↓↓↓↓ (en)
+
+I in wave fee Time between.
 ```
 
 ```
 こんにちは
+
 ↓↓↓↓↓ (en)
+
 This Hmm To Chi Is
 ```
 
 ```
 Because I had to catch the train, and as we were short on time, I forgot to pack my laptop in my suitcase for our one in a lifetime honeymoon.
+
 ↓↓↓↓↓ (ko)
+
 때문에 나는 했다 에 잡기 그만큼 기차, 과 같이 우리 했다 짧은 의 위에 시각, 나는 잊었다 에 팩 나의 노트북 에 나의 여행 가방 ...에 대한 우리의 하나 에 ㅏ 일생 신흔 여행.
 ```
 
@@ -70,7 +84,9 @@ The default text is "The quick brown fox jumps over the lazy dog." The phrase mu
 
 ```
 The quick brown fox jumps over the lazy dog.
+
 ↓↓↓↓↓ (en)
+
 los rápido marrón zorro saltos encima el perezoso perro.
 ```
 
@@ -79,7 +95,9 @@ You can also translate into different languages other than English:
 ```
 >spanglish --phrase "Este script de Python apesta y debería ser exiliado de GitHub por hacer esto" -s es -d ja
 Este script de Python apesta y debería ser exiliado de GitHub por hacer esto
+
 ↓↓↓↓↓ (ja)
+
 この 脚本 の パイソン 悪臭 そして すべき なる 追放された の GitHub 沿って 行う この
 ```
 
@@ -89,8 +107,11 @@ To detect languages you don't know, you can use detect instead of a code. It wil
 ```
 >spanglish --phrase "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu libero mauris." --source_language detect -d en
 Phrase was detected as la.
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu libero mauris.
+
 ↓↓↓↓↓ (en)
+
 lorem very pain let it be carrots; Minneapolis undergraduate developer. to football free start.
 ```
 
