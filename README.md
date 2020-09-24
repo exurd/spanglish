@@ -49,11 +49,13 @@ optional arguments:
                         correctly!
   --source_language SOURCE_LANGUAGE, -s SOURCE_LANGUAGE
                         The source text language. Use two letter codes or else
-                        it won't work.
+                        it won't work. If you don't know what the language is,
+                        you can type 'detect'.
   --destination_language DESTINATION_LANGUAGE, -d DESTINATION_LANGUAGE
                         The source text language. Same as source language; use
                         two letter codes!
   --check_languages     Checks for languages possible on googletrans.
+  --clean               Makes the translation output the only thing to appear.
   --version             show program's version number and exit
 ```
 
