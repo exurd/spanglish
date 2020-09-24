@@ -5,13 +5,37 @@
 
 Have you ever seen a translation so bad it's good? spanglish tries to replicate this by translating a sentence on Google Translate word by word, instead of the whole sentence. This leads to the program generating readable nonsense.
 
+### Examples:
+
+```
+我在浪费时间。
+↓↓↓↓↓ (en)
+I in wave fee Time between .
+```
+
+```
+こんにちは
+↓↓↓↓↓ (en)
+This Hmm To Chi Is
+```
+
+```
+Because I had to catch the train, and as we were short on time, I forgot to pack my laptop in my suitcase for our one in a lifetime honeymoon.
+↓↓↓↓↓ (ko)
+때문에 나는 했다 에 잡기 그만큼 기차, 과 같이 우리 했다 짧은 의 위에 시각, 나는 잊었다 에 팩 나의 노트북 에 나의 여행 가방 ...에 대한 우리의 하나 에 ㅏ 일생 신흔 여행.
+```
+
 ## Usage
+
+### Requirements
 
 spanglish requires the packages 'googletrans' and 'hyper'.
 
 You can install the packages via 'pip install -r requirements.txt'.
 
-To get help you can use the -h parameter:
+### Help
+
+To get help in the program you can use the -h parameter:
 
 ```
 usage: spanglish.py [-h] [--phrase PHRASE] [--source_language SOURCE_LANGUAGE]
@@ -33,6 +57,8 @@ optional arguments:
   --version             show program's version number and exit
 ```
 
+### Translate
+
 To type translate using spanglsh:
 
 ```
@@ -42,18 +68,31 @@ The default text is "The quick brown fox jumps over the lazy dog." The phrase mu
 
 ```
 The quick brown fox jumps over the lazy dog.
-↓↓↓↓↓
+↓↓↓↓↓ (en)
 los rápido marrón zorro saltos encima el perezoso perro.
 ```
 
-Here is another example.
+You can also translate into different languages other than English
 
 ```
->spanglish --phrase "Este script de Python apesta y debería ser exiliado de GitHub por hacer esto" -s es -d en
+>spanglish --phrase "Este script de Python apesta y debería ser exiliado de GitHub por hacer esto" -s es -d ja
 Este script de Python apesta y debería ser exiliado de GitHub por hacer esto
-↓↓↓↓↓
-This script of Python stinks and should be exiled of GitHub by do this
+↓↓↓↓↓ (ja)
+この 脚本 の パイソン 悪臭 そして すべき なる 追放された の GitHub 沿って 行う この
 ```
+
+### Detect Languages
+
+To detect languages you don't know, you can use detect instead of a code. It will tell you which language it is in and use it automatically.
+```
+>spanglish --phrase "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu libero mauris." --source_language detect -d en
+Phrase was detected as la.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu libero mauris.
+↓↓↓↓↓ (en)
+lorem very pain let it be carrots; Minneapolis undergraduate developer. to football free start.
+```
+
+### Check Languages that you can use
 
 To check what languages you can use and get their codes, you can use the --check_languages argument.
 ```
