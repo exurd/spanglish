@@ -3,7 +3,7 @@
 ###### for python 3+ only
 [![GitHub version](https://badge.fury.io/gh/exurd%2Fspanglish.svg)](https://badge.fury.io/gh/exurd%2Fspanglish) ![hyper](https://img.shields.io/badge/runs%20better%20with-hyper-red "i mean, someone said so.") ![build status](https://img.shields.io/badge/build%20status-%C2%A1Muy%20bien!-green "that's good!")
 
-Have you ever seen a translation so bad it's good? spanglish tries to replicate this by translating a sentence on Google Translate word by word.
+Have you ever seen a translation so bad it's good? spanglish tries to replicate this by translating a sentence on Google Translate word by word, instead of the whole sentence. This leads to the program generating readable nonsense.
 
 ## Usage
 
@@ -38,7 +38,7 @@ To type translate using spanglsh:
 ```
 >spanglish -s en -d es
 ```
-The default text is "The quick brown fox jumps over the lazy dog." The phrase must be encased in quotation marks for it to work. Afterwards, the translater will translate it as:
+The default text is "The quick brown fox jumps over the lazy dog." The phrase must be encased in quotation marks for script to work. Afterwards, the translater will translate it as:
 
 ```
 The quick brown fox jumps over the lazy dog.
