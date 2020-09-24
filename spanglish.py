@@ -15,7 +15,7 @@ parser.add_argument('--clean', help="Makes the translation output the only thing
 parser.add_argument('--version', action='version', version='%(prog)s 0.1.0')
 args, unknown = parser.parse_known_args()
 
-# Checks if you are using the check_languages argument
+# Checks if you are using the check_languages argument; if so it will display languages and close
 if args.check_languages == True:
     print("The languages possible are:")
     print(googletrans.LANGUAGES)
@@ -45,16 +45,15 @@ elif detection == "ja" or args.source_language == "ja":
 elif detection == "ko" or args.source_language == "ko":
     words = [i for i in args.phrase]
 else:
-    words = args.phrase.split(" ") # Splits the phrase into words
+    words = args.phrase.split(" ") # For other languages it just splits the phrase into words
 
-# Uses this code if the argument source_language uses detect
 if args.source_language == "detect":
-    translations = translator.translate(words, src=detection, dest=args.destination_language)
+    translations = translator.translate(words, src=detection, dest=args.destination_language) # If the argument source_language uses detect it will use this
 else:
     translations = translator.translate(words, src=args.source_language, dest=args.destination_language)
 
 # Prints out the result
-if args.clean == False:
+if args.clean == False: # If false it will display the original and the arrows
     print(args.phrase)
     print("↓↓↓↓↓ (" + args.destination_language + ")")
 for translation in translations:
