@@ -11,7 +11,7 @@ parser.add_argument('--phrase', '-p', type=str,  help="The phrase you want to tr
 parser.add_argument('--source_language', '-s', type=str,  help="The source text language. Use two letter codes or else it won't work. If you don't know what the language is, you can type 'detect'.", default="en")
 parser.add_argument('--destination_language', '-d', type=str,  help="The source text language. Same as source language; use two letter codes!", default="es")
 parser.add_argument('--check_languages', help="Checks for languages possible on googletrans.", action='store_true')
-parser.add_argument('--clean', help="Makes the translation the only thing to appear", action='store_true')
+parser.add_argument('--clean', help="Makes the translation output the only thing to appear", action='store_true')
 parser.add_argument('--version', action='version', version='%(prog)s 0.1.0')
 args, unknown = parser.parse_known_args()
 
