@@ -72,7 +72,7 @@ The quick brown fox jumps over the lazy dog.
 los rápido marrón zorro saltos encima el perezoso perro.
 ```
 
-You can also translate into different languages other than English
+You can also translate into different languages other than English:
 
 ```
 >spanglish --phrase "Este script de Python apesta y debería ser exiliado de GitHub por hacer esto" -s es -d ja
