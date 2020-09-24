@@ -53,6 +53,6 @@ else:
 
 # Prints out the result
 print(args.phrase)
-print("↓↓↓↓↓")
+print("↓↓↓↓↓ (" + args.destination_language + ")")
 for translation in translations:
     print(translation.text, end=" ")
