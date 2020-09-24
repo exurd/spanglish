@@ -21,16 +21,32 @@ if args.check_languages == True:
     print("The program will now close.")
     sys.exit()
 
-# Splits the phrase into words
-words = args.phrase.split(" ")
-
-# Puts it through the translator
+# Activates the translator
 translator = Translator()
+detection = "detection" # so the program won't error out when checking for a logographic language
 
-# Uses this code if the argument source_language uses detect
 if args.source_language == "detect":
     detection = translator.detect(args.phrase).lang
     print("Phrase was detected as", detection + ".")
+
+# Checks if the detection it's a logographic language and splits the phrase into parts if so
+if detection == "ar" or args.source_language == "ar":
+    words = [i for i in args.phrase]
+elif detection == "zh-TW" or args.source_language == "zh-TW":
+    words = [i for i in args.phrase]
+elif detection == "zh-CN" or args.source_language == "zh-CN":
+    words = [i for i in args.phrase]
+elif detection == "jw" or args.source_language == "jw":
+    words = [i for i in args.phrase]
+elif detection == "ja" or args.source_language == "ja":
+    words = [i for i in args.phrase]
+elif detection == "ko" or args.source_language == "ko":
+    words = [i for i in args.phrase]
+else:
+    words = args.phrase.split(" ") # Splits the phrase into words
+
+# Uses this code if the argument source_language uses detect
+if args.source_language == "detect":
     translations = translator.translate(words, src=detection, dest=args.destination_language)
 else:
     translations = translator.translate(words, src=args.source_language, dest=args.destination_language)
