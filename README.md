@@ -39,6 +39,16 @@ Because I had to catch the train, and as we were short on time, I forgot to pack
 때문에 나는 했다 에 잡기 그만큼 기차, 과 같이 우리 했다 짧은 의 위에 시각, 나는 잊었다 에 팩 나의 노트북 에 나의 여행 가방 ...에 대한 우리의 하나 에 ㅏ 일생 신흔 여행.
 ```
 
+```
+Можно, пожалуйста, твой номер телефона?
+
+
+↓↓↓↓↓ (en)
+
+
+Can, you are welcome, is yours number phone?
+```
+
 ## Usage
 
 ### Requirements
