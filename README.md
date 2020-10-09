@@ -42,9 +42,7 @@ Because I had to catch the train, and as we were short on time, I forgot to pack
 ```
 Можно, пожалуйста, твой номер телефона?
 
-
 ↓↓↓↓↓ (en)
-
 
 Can, you are welcome, is yours number phone?
 ```
