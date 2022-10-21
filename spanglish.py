@@ -27,6 +27,8 @@ if args.check_languages == True:
 translator = Translator()
 detection = "detection" # so the program won't error out when checking for a logographic language
 
+phrase = []
+
 if args.source_language == "detect":
     detection = translator.detect(args.phrase).lang
     if args.clean == False:
@@ -61,30 +63,37 @@ if args.clean == False: # If false it will display the original and the arrows
     print("\n")
     print("↓↓↓↓↓ (" + args.destination_language + ")")
     print("\n")
+
 if args.clean == False:
     for translation in translations:
         print(translation.text, end=" ")
+        phrase.append(translation.text)
     print("\n")
-elif args.boomerang == False:
-    for translation in translations:
-        print(translation.text, end=" ")
-    print("\n")
+else:
+    if args.boomerang == False:
+        for translation in translations:
+            print(translation.text, end=" ")
+    else:
+        for translation in translations:
+            phrase.append(translation.text)
+
+#print(phrase)
 
 # Next part is for the boomerang argument
 if args.boomerang == True:
     # Checks if the detection it's a logographic language and splits the phrase into parts if so
     if args.destination_language == "ar":
-        boomerwords = [i for i in args.phrase]
+        boomerwords = [i for i in phrase]
     elif args.destination_language == "zh-TW":
-        boomerwords = [i for i in args.phrase]
+        boomerwords = [i for i in phrase]
     elif args.destination_language == "zh-CN":
-        boomerwords = [i for i in args.phrase]
+        boomerwords = [i for i in phrase]
     elif args.destination_language == "jw":
-        boomerwords = [i for i in args.phrase]
+        boomerwords = [i for i in phrase]
     elif args.destination_language == "ja":
-        boomerwords = [i for i in args.phrase]
+        boomerwords = [i for i in phrase]
     elif args.destination_language == "ko":
-        boomerwords = [i for i in args.phrase]
+        boomerwords = [i for i in phrase]
     else:
         boomerwords = args.phrase.split(" ") # For other languages it just splits the phrase into words
     
@@ -102,5 +111,5 @@ if args.boomerang == True:
         print("\n")
     for translation in boomertranslations:
         print(translation.text, end=" ")
-        
+    
     print("\n")
